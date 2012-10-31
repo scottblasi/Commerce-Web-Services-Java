@@ -1,0 +1,75 @@
+
+package com.ipcommerce.schemas.cws.v2_0.dataservices.billing;
+
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlEnumValue;
+import javax.xml.bind.annotation.XmlType;
+
+
+/**
+ * <p>Java class for BreakdownType.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * <pre>
+ * &lt;simpleType name="BreakdownType">
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     &lt;enumeration value="NotSet"/>
+ *     &lt;enumeration value="ServiceKey"/>
+ *     &lt;enumeration value="MerchantProfileId"/>
+ *   &lt;/restriction>
+ * &lt;/simpleType>
+ * </pre>
+ * 
+ */
+@XmlType(name = "BreakdownType")
+@XmlEnum
+public enum BreakdownType {
+
+
+    /**
+     * <summary>
+     *             No breakdown has been requested
+     *             </summary>
+     * 
+     */
+    @XmlEnumValue("NotSet")
+    NOT_SET("NotSet"),
+
+    /**
+     * <summary>
+     *             Billing event data is broken down by service key
+     *             </summary>
+     * 
+     */
+    @XmlEnumValue("ServiceKey")
+    SERVICE_KEY("ServiceKey"),
+
+    /**
+     * <summary>
+     *             Billing event data is broken down by merchant profile id
+     *             </summary>
+     * 
+     */
+    @XmlEnumValue("MerchantProfileId")
+    MERCHANT_PROFILE_ID("MerchantProfileId");
+    private final String value;
+
+    BreakdownType(String v) {
+        value = v;
+    }
+
+    public String value() {
+        return value;
+    }
+
+    public static BreakdownType fromValue(String v) {
+        for (BreakdownType c: BreakdownType.values()) {
+            if (c.value.equals(v)) {
+                return c;
+            }
+        }
+        throw new IllegalArgumentException(v);
+    }
+
+}
