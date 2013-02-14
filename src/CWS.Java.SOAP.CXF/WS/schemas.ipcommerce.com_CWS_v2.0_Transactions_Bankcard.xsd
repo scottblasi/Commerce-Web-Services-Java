@@ -75,6 +75,14 @@
             &lt;/summary&gt;</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="IndustryType" type="q1:IndustryType" minOccurs="0">
+						<xs:annotation>
+							<xs:appinfo/>
+							<xs:documentation>&lt;summary&gt;
+            Obsolete.  MerchantProfile must include Industry Type and cannot be overridden.
+            &lt;/summary&gt;</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="InternetTransactionData" type="tns:InternetTransactionData" nillable="true" minOccurs="0">
 						<xs:annotation>
 							<xs:appinfo/>
